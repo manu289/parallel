@@ -1,6 +1,7 @@
 pipeline {
 	agent none
-	stages ( 'c-project and java' ) {
+	stages {
+	stage ( 'c-project and java' ) {
 		parallel {
 		stage ('make') {
 			agent { label 'slaveforc' }

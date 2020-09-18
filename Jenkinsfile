@@ -1,7 +1,7 @@
 pipeline {
 	agent none
-
-	stages {
+	stages ( 'c-project and java' ) {
+		parallel {
 		stage ('make') {
 			agent { label 'slaveforc' }
 			steps {
@@ -18,6 +18,8 @@ pipeline {
 				sh 'mvn clean install'
 			}
 		}
+		}
+	}
 		
 	}
 }

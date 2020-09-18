@@ -7,6 +7,8 @@ pipeline {
 			steps {
 			  	git 'https://github.com/manu289/mainrepo.git'
 					sh 'make'
+				echo 'This is slaveforc node with STAGE 1'
+						sh 'sleep 10'
 			}
 		}
 		stage ('Java Project') {
